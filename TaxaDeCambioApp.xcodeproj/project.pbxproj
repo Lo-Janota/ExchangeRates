@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B520A2C32B75596E004F4505 /* RatesFluctuationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B520A2C22B75596E004F4505 /* RatesFluctuationView.swift */; };
+		B520A2C52B756B00004F4505 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B520A2C42B756B00004F4505 /* Extensions.swift */; };
 		B5AAFB772B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAFB762B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift */; };
 		B5AAFB792B727A2E00A4B0C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAFB782B727A2E00A4B0C3 /* ContentView.swift */; };
 		B5AAFB7B2B727A3400A4B0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AAFB7A2B727A3400A4B0C3 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B520A2C22B75596E004F4505 /* RatesFluctuationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFluctuationView.swift; sourceTree = "<group>"; };
+		B520A2C42B756B00004F4505 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B5AAFB732B727A2E00A4B0C3 /* TaxaDeCambioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxaDeCambioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5AAFB762B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaDeCambioAppApp.swift; sourceTree = "<group>"; };
 		B5AAFB782B727A2E00A4B0C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B520A2C12B755942004F4505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5AAFB782B727A2E00A4B0C3 /* ContentView.swift */,
+				B520A2C22B75596E004F4505 /* RatesFluctuationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B5AAFB6A2B727A2E00A4B0C3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				B5AAFB842B727C4000A4B0C3 /* DataProvider */,
+				B520A2C12B755942004F4505 /* Views */,
 				B5AAFB762B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift */,
-				B5AAFB782B727A2E00A4B0C3 /* ContentView.swift */,
+				B520A2C42B756B00004F4505 /* Extensions.swift */,
 				B5AAFB7A2B727A3400A4B0C3 /* Assets.xcassets */,
 				B5AAFB7C2B727A3400A4B0C3 /* Preview Content */,
 			);
@@ -249,10 +263,12 @@
 				B5AAFBA22B72BA0900A4B0C3 /* RatesHistoricalDataProvider.swift in Sources */,
 				B5AAFB952B72A76200A4B0C3 /* CurrencySymbolObject.swift in Sources */,
 				B5AAFB772B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift in Sources */,
+				B520A2C32B75596E004F4505 /* RatesFluctuationView.swift in Sources */,
 				B5AAFB992B72AAD000A4B0C3 /* RateStore.swift in Sources */,
 				B5AAFB9D2B72B31100A4B0C3 /* DataProviderMenager.swift in Sources */,
 				B5AAFB882B727CA600A4B0C3 /* RateAPI.swift in Sources */,
 				B5AAFB972B72A7D200A4B0C3 /* RateHistoricalObject.swift in Sources */,
+				B520A2C52B756B00004F4505 /* Extensions.swift in Sources */,
 				B5AAFBA52B72BB1200A4B0C3 /* CurrencyDataProvider.swift in Sources */,
 				B5AAFB9B2B72AFDA00A4B0C3 /* CurrencyStore.swift in Sources */,
 			);

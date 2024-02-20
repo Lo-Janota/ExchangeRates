@@ -19,7 +19,7 @@ extension Double {
         }
     }
     
-    func Formatter(decimalPlaces: Int, with changeSymbol: Bool = false) -> String {
+    func formatter(decimalPlaces: Int, with changeSymbol: Bool = false) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.roundingMode = .halfUp
@@ -40,7 +40,7 @@ extension Double {
     }
     
     func toPercentage(with changeSymbol: Bool = false) -> String {
-        let value = Formatter(decimalPlaces: 2)
+        let value = formatter(decimalPlaces: 2)
         
         if changeSymbol {
             if self.sign == .minus {
@@ -51,6 +51,34 @@ extension Double {
         }
         return "\(value)%"
     }
-    
+}
 
+extension String {
+    
+    func toDate(dateFormat: String = "yyyy-MM-dd") -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.date(from: self) ?? Date()
+    }
+}
+
+extension Date {
+    
+    init(from componet: Calendar.Component, value: Int) {
+        self = Calendar.current.date(byAdding: componet, value: -value, to: Date()) ?? Date()
+    }
+    
+    func Formatter(to dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR_POSIX")
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: self)
+    }
+}
+
+extension UINavigationController {
+    
+    open override func viewWillLayoutSubviews() {
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
 }

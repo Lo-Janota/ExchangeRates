@@ -63,6 +63,7 @@ class RateFluctuationViewModel: ObservableObject {
         
         @State var baseCurrecy: String
         @State var rateFluctuation: Fluctuation
+        @State private var isPresentedBaseCurrencyFilter = false
         
         var body: some View {
             ScrollView(showsIndicators: false) {
@@ -192,12 +193,15 @@ class RateFluctuationViewModel: ObservableObject {
         }
         private var comparationButtonView: some View {
             Button {
-                print("Comparar com: ")
+                isPresentedBaseCurrencyFilter.toggle()
             } label: {
                 Image(systemName: "magnifyingglass")
                 Text("Comparar com")
                     .font(.system(size: 16))
             }
+            .fullScreenCover(isPresented: $isPresentedBaseCurrencyFilter, content: {
+                BaseCurrencyFilterView()
+            })
         }
         private var comparationScrollView: some View{
             ScrollView(.horizontal, showsIndicators: false) {

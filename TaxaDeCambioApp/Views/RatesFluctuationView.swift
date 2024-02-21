@@ -29,6 +29,8 @@ struct RatesFluctuationView: View {
     @StateObject var viewModel = FluctuationViewModel()
     
     @State private var searchText = ""
+    @State private var isPresentedBaseCurrencyFilter = false
+    @State private var isPresentedMultiCurrencyFilter = false
     
     var searchResult: [Fluctuation] {
         if searchText.isEmpty {
@@ -54,19 +56,21 @@ struct RatesFluctuationView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    print("Filtrar Moedas")
+                    isPresentedMultiCurrencyFilter.toggle()
                 } label: {
                     Image(systemName: "slider.horizontal.3")
                 }
+                .fullScreenCover(isPresented: $isPresentedMultiCurrencyFilter, content:  {
+                    MultiCurrenciesFilterView()
+                })
             }
         }
     }
     
     private var baseCurrencyPeriodFilterView: some View {
         HStack(alignment: .center, spacing: 16) {
-            
             Button {
-                print("Filtrar moeda base")
+                isPresentedBaseCurrencyFilter.toggle()
             } label: {
                 Text("BRL")
                     .font(.system(size: 14, weight: .bold))
@@ -76,6 +80,9 @@ struct RatesFluctuationView: View {
                         RoundedRectangle(cornerRadius: 8).stroke(.white, lineWidth: 1)
                     )
             }
+            .fullScreenCover(isPresented: $isPresentedBaseCurrencyFilter, content: {
+                BaseCurrencyFilterView()
+            })
             .background(Color(UIColor.lightGray))
             .cornerRadius(8)
             

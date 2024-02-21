@@ -27,6 +27,8 @@
 		B5AAFBA02B72B3F100A4B0C3 /* RateFluctuationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAFB9F2B72B3F100A4B0C3 /* RateFluctuationDataProvider.swift */; };
 		B5AAFBA22B72BA0900A4B0C3 /* RatesHistoricalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAFBA12B72BA0900A4B0C3 /* RatesHistoricalDataProvider.swift */; };
 		B5AAFBA52B72BB1200A4B0C3 /* CurrencyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AAFBA42B72BB1200A4B0C3 /* CurrencyDataProvider.swift */; };
+		B5B7F12B2B866ADD0054B91C /* BaseCurrencyFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7F12A2B866ADD0054B91C /* BaseCurrencyFilterView.swift */; };
+		B5B7F12F2B866B160054B91C /* MultiCurrenciesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7F12E2B866B160054B91C /* MultiCurrenciesFilterView.swift */; };
 		B5C807AF2B83CB0200EC0848 /* TimeRangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C807AE2B83CB0200EC0848 /* TimeRangeEnum.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		B5AAFB9F2B72B3F100A4B0C3 /* RateFluctuationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateFluctuationDataProvider.swift; sourceTree = "<group>"; };
 		B5AAFBA12B72BA0900A4B0C3 /* RatesHistoricalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesHistoricalDataProvider.swift; sourceTree = "<group>"; };
 		B5AAFBA42B72BB1200A4B0C3 /* CurrencyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataProvider.swift; sourceTree = "<group>"; };
+		B5B7F12A2B866ADD0054B91C /* BaseCurrencyFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrencyFilterView.swift; sourceTree = "<group>"; };
+		B5B7F12E2B866B160054B91C /* MultiCurrenciesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCurrenciesFilterView.swift; sourceTree = "<group>"; };
 		B5C807AE2B83CB0200EC0848 /* TimeRangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,8 @@
 				B5AAFB782B727A2E00A4B0C3 /* ContentView.swift */,
 				B520A2C22B75596E004F4505 /* RatesFluctuationView.swift */,
 				B52B98D52B83D64F008325C2 /* RateFluctuationDetailView.swift */,
+				B5B7F12A2B866ADD0054B91C /* BaseCurrencyFilterView.swift */,
+				B5B7F12E2B866B160054B91C /* MultiCurrenciesFilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				B5AAFB792B727A2E00A4B0C3 /* ContentView.swift in Sources */,
 				B5AAFBA22B72BA0900A4B0C3 /* RatesHistoricalDataProvider.swift in Sources */,
 				B5AAFB952B72A76200A4B0C3 /* CurrencySymbolObject.swift in Sources */,
+				B5B7F12B2B866ADD0054B91C /* BaseCurrencyFilterView.swift in Sources */,
 				B5AAFB772B727A2E00A4B0C3 /* TaxaDeCambioAppApp.swift in Sources */,
 				B520A2C32B75596E004F4505 /* RatesFluctuationView.swift in Sources */,
 				B5AAFB992B72AAD000A4B0C3 /* RateStore.swift in Sources */,
@@ -287,6 +294,7 @@
 				B5C807AF2B83CB0200EC0848 /* TimeRangeEnum.swift in Sources */,
 				B5AAFBA52B72BB1200A4B0C3 /* CurrencyDataProvider.swift in Sources */,
 				B5AAFB9B2B72AFDA00A4B0C3 /* CurrencyStore.swift in Sources */,
+				B5B7F12F2B866B160054B91C /* MultiCurrenciesFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

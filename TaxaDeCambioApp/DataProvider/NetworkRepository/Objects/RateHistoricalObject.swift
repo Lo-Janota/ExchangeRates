@@ -7,4 +7,6 @@
 
 import Foundation
 
+// Definição do tipo de objeto para histórico de taxas
 typealias RateHistoricalObject = [String: [String: String]]
+

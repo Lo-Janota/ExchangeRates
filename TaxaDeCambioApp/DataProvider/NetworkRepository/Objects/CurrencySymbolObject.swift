@@ -7,4 +7,6 @@
 
 import Foundation
 
+// Definição do tipo de objeto para símbolos de moeda
 typealias CurrencySymbolObject = [String: String]
+

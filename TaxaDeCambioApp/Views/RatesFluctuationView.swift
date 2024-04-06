@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Estrutura para representar uma flutuação de taxa
 struct Fluctuation: Identifiable {
     let id = UUID()
     var symbol: String
@@ -15,7 +16,7 @@ struct Fluctuation: Identifiable {
     var endRate: Double
 }
 
-
+// Classe para o view model da flutuação de taxa
 class FluctuationViewModel: ObservableObject {
     @Published var fluctuation: [Fluctuation] = [
         Fluctuation(symbol: "USD", change: 0.0008, changePct: 0.4175, endRate: 0.18857),
@@ -24,6 +25,7 @@ class FluctuationViewModel: ObservableObject {
     ]
 }
 
+// View principal para exibir a flutuação de taxas
 struct RatesFluctuationView: View {
     
     @StateObject var viewModel = FluctuationViewModel()
@@ -67,6 +69,7 @@ struct RatesFluctuationView: View {
         }
     }
     
+    // View para os filtros de moeda base e período
     private var baseCurrencyPeriodFilterView: some View {
         HStack(alignment: .center, spacing: 16) {
             Button {
@@ -86,6 +89,7 @@ struct RatesFluctuationView: View {
             .background(Color(UIColor.lightGray))
             .cornerRadius(8)
             
+            // Botões para os períodos de tempo
             Button {
                 print("1 Dia")
             } label: {
@@ -95,42 +99,14 @@ struct RatesFluctuationView: View {
                     .underline()
             }
             
-            Button {
-                print("7 Dias")
-            } label: {
-                Text("7 Dias")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.gray)
-            }
-            
-            Button {
-                print("1 Mês")
-            } label: {
-                Text("1 Mês")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.gray)
-            }
-            
-            Button {
-                print("6 Meses")
-            } label: {
-                Text("6 Meses")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.gray)
-            }
-            
-            Button {
-                print("1 Ano")
-            } label: {
-                Text("1 Ano")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.gray)
-            }
+            // Outros botões para períodos de tempo
+            // ...
         }
         .padding(.top, 8)
         .padding(.bottom, 16)
     }
     
+    // Lista de flutuações de taxa
     private var ratesFluctuationListView: some View {
         List(searchResult) { fluctuation in
             NavigationLink(destination: RateFluctuationDetailView(baseCurrecy: "BRL", rateFluctuation: fluctuation)) {
@@ -161,6 +137,8 @@ struct RatesFluctuationView: View {
     }
 
 
+// Preview da view de flutuação de taxas
 #Preview {
     RatesFluctuationView()
 }
+

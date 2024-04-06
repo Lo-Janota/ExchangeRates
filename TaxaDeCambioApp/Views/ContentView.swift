@@ -7,22 +7,17 @@
 
 import SwiftUI
 
+// Estrutura da view principal
 struct ContentView: View {
     var body: some View {
-        RatesFluctuationView()
+        RatesFluctuationView() // Exibe a view de flutuação de taxas
     }
-    
- 
 }
 
-
+// Estrutura para preview da view principal
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView() // Exibe a view principal
     }
 }
 
-
-#Preview {
-    ContentView()
-}

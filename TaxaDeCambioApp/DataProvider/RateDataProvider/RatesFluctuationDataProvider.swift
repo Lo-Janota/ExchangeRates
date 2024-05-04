@@ -14,7 +14,7 @@ protocol RateFluctuationDataProviderDelegate: DataProviderMenagerDelegate {
 }
 
 // Classe responsável por prover os dados de flutuação de taxa
-class RateFluctuationDataProvider: DataProviderMenager <RateFluctuationDataProviderDelegate, RateFluctuationObject> {
+class RatesFluctuationDataProvider: DataProviderMenager <RateFluctuationDataProviderDelegate, RateFluctuationObject> {
     
     // Armazenamento da loja de taxas
     private let ratesStore: RateStore

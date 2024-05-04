@@ -9,26 +9,18 @@
 import SwiftUI
 import Charts
 
-// Definição de uma struct para representar uma comparação de gráfico
-struct ChartComparation: Identifiable, Equatable {
-    let id = UUID()
-    var symbol: String
-    var period: Date
-    var endRate: Double
-}
-
 // Classe que contém a lógica de visualização e processamento dos dados
 class RateFluctuationViewModel: ObservableObject {
-    @Published var fluctuations: [Fluctuation] = [
-        Fluctuation(symbol: "JPY", change: 0.0008, changePct: 0.0005, endRate: 0.007242),
-        Fluctuation(symbol: "EUR", change: 0.0003, changePct: 0.1651, endRate: 0.181353),
-        Fluctuation(symbol: "GBP", change: -0.0001, changePct: -0.0403, endRate: 0.1589150)
+    @Published var fluctuations: [RateFluctuationModel] = [
+        RateFluctuationModel(symbol: "JPY", change: 0.0008, changePct: 0.0005, endRate: 0.007242),
+        RateFluctuationModel(symbol: "EUR", change: 0.0003, changePct: 0.1651, endRate: 0.181353),
+        RateFluctuationModel(symbol: "GBP", change: -0.0001, changePct: -0.0403, endRate: 0.1589150)
     ]
-    @Published var chartComparations: [ChartComparation] = [
-        ChartComparation(symbol: "USD", period: "2022-11-13".toDate(), endRate: 0.18857),
-        ChartComparation(symbol: "USD", period: "2022-11-12".toDate(), endRate: 0.18757),
-        ChartComparation(symbol: "USD", period: "2022-11-11".toDate(), endRate: 0.189786),
-        ChartComparation(symbol: "USD", period: "2022-11-10".toDate(), endRate: 0.197073),
+    @Published var chartComparations: [RateHistoricalModel] = [
+        RateHistoricalModel(symbol: "USD", period: "2022-11-13".toDate(), endRate: 0.18857),
+        RateHistoricalModel(symbol: "USD", period: "2022-11-12".toDate(), endRate: 0.18757),
+        RateHistoricalModel(symbol: "USD", period: "2022-11-11".toDate(), endRate: 0.189786),
+        RateHistoricalModel(symbol: "USD", period: "2022-11-10".toDate(), endRate: 0.197073),
     ]
     @Published var timeRange = TimeRangeEnum.today
     
@@ -70,7 +62,7 @@ struct RateFluctuationDetailView: View {
     @StateObject var viewModel = RateFluctuationViewModel() // View model para gerenciar os dados
     
     @State var baseCurrecy: String // Moeda base
-    @State var rateFluctuation: Fluctuation // Flutuação da taxa de câmbio
+    @State var rateFluctuation: RateFluctuationModel // Flutuação da taxa de câmbio
     @State private var isPresentedBaseCurrencyFilter = false // Estado para controlar a exibição do filtro de moeda base
     
     var body: some View {
@@ -230,7 +222,7 @@ struct RateFluctuationDetailView: View {
 // Preview da tela de detalhes da flutuação da taxa de câmbio
 struct RateFluctuationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RateFluctuationDetailView(baseCurrecy: "BRL", rateFluctuation: Fluctuation(symbol: "EUR", change: 0.0003, changePct: 0.1651, endRate: 0.181353))
+        RateFluctuationDetailView(baseCurrecy: "BRL", rateFluctuation: RateFluctuationModel(symbol: "EUR", change: 0.0003, changePct: 0.1651, endRate: 0.181353))
     }
 }
 

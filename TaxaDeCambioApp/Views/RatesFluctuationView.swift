@@ -7,38 +7,20 @@
 
 import SwiftUI
 
-// Estrutura para representar uma flutuação de taxa
-struct Fluctuation: Identifiable {
-    let id = UUID()
-    var symbol: String
-    var change: Double
-    var changePct: Double
-    var endRate: Double
-}
-
-// Classe para o view model da flutuação de taxa
-class FluctuationViewModel: ObservableObject {
-    @Published var fluctuation: [Fluctuation] = [
-        Fluctuation(symbol: "USD", change: 0.0008, changePct: 0.4175, endRate: 0.18857),
-        Fluctuation(symbol: "EUR", change: 0.0003, changePct: 0.1651, endRate: 0.181353),
-        Fluctuation(symbol: "GBP", change: -0.0001, changePct: -0.0403, endRate: 0.158915)
-    ]
-}
-
 // View principal para exibir a flutuação de taxas
 struct RatesFluctuationView: View {
     
-    @StateObject var viewModel = FluctuationViewModel()
+    @StateObject var viewModel = ViewModel()
     
     @State private var searchText = ""
     @State private var isPresentedBaseCurrencyFilter = false
     @State private var isPresentedMultiCurrencyFilter = false
     
-    var searchResult: [Fluctuation] {
+    var searchResult: [RateFluctuationModel] {
         if searchText.isEmpty {
-            return viewModel.fluctuation
+            return viewModel.ratesFluctuation
         } else {
-            return viewModel.fluctuation.filter {
+            return viewModel.ratesFluctuation.filter {
                 $0.symbol.contains(searchText.uppercased()) ||
                 $0.change.formatter(decimalPlaces: 4).contains(searchText.uppercased()) ||
                 $0.changePct.toPercentage().contains(searchText.uppercased()) ||
